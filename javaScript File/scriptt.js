@@ -1,4 +1,4 @@
-import {deleteRaw} from './func.js'
+
 
 // // დავწეროთ ფუნქცია რომელსაც გადეცემა რაიმე პარამეტრი და არგუმენტად მიიღებს ისეთ რიცხვებს
 // // რომლის დახმარებითაც უნდა გამოვითვალო მაგალითად რამდენი წელი გვაკლდება თითოეულს
@@ -171,5 +171,22 @@ const getApi = async () => {
   
   getApi();
 
+  function deleteRaw() {
+    const table = document.querySelector(".tableRow")
+    const redButton = document.querySelector(".deleteButton")
+  
+    redButton.addEventListener("click" , () => {
+      table.remove();
+    })
+  
+  }
+  
+
+
+  // importit ver davaexporte function da aq davwere // 
+  
+
+
+  
   
   
