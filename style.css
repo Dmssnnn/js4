@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.checkbox {
+    text-align: center;
+    vertical-align: middle;
+}
+table {
+    width: 100%;
+}
+tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+
+  td {
+    text-align: center;
+  }
+
+.deleteButton {
+    width: 65px;
+    height: 20px;
+    border-radius: 25px;
+    background-color: #DC3545;
+    color: white;
+    border-color:#DC3545 ;
+}
+
+
+
+
