@@ -1,3 +1,5 @@
+import {deleteRaw} from './func.js'
+
 // // დავწეროთ ფუნქცია რომელსაც გადეცემა რაიმე პარამეტრი და არგუმენტად მიიღებს ისეთ რიცხვებს
 // // რომლის დახმარებითაც უნდა გამოვითვალო მაგალითად რამდენი წელი გვაკლდება თითოეულს
 // // პენსიამდე და ეს ყველაფერი უნდა დავწეროთ ამ ფუნქციაში.
@@ -125,61 +127,49 @@
 
 
 const getApi = async () => {
-  try {
-    const getData = await fetch("https://jsonplaceholder.typicode.com/users");
-    const result = await getData.json();
-
-      const container = document.createElement("div");
-      container.classList.add("container");
-
-      const table = document.createElement("table")
-      table.innerHTML = `
-      <tr>
-      <th>CheckBox</th>
-      <th>Name</th>
-      <th>Username</th>
-      <th>Email</th>
-      <th>Address</th>
-    </tr>
-      ` 
-
-      result.forEach(item => {
-        const tableRow = document.createElement("tr")
-        tableRow.classList.add("tableRow")
-        tableRow.innerHTML = `
-        <tr>
-        <td><input type="checkbox"></td>
-        <td>${item.name}</td>
-        <td>${item.username}</td>
-        <td>${item.email}</td>
-        <td>${item.address.street}</td>
-        <td><button onclick="deleteRaw()" class ="deleteButton">Delete</button></td>
-      </tr>
-        `
-
-        table.appendChild(tableRow)
-        container.appendChild(table)
-        document.body.appendChild(container);
-      })
-  } catch (error) {
-    console.error("Error:", error);
-  }
-};
-
-
-getApi();
-
-
-
-function deleteRaw  ()  {
-  const table = document.querySelector(".tableRow")
-  const redButton = document.querySelector(".deleteButton")
+    try {
+      const getData = await fetch("https://jsonplaceholder.typicode.com/users");
+      const result = await getData.json();
   
-  redButton.addEventListener("click" , () => {
-    table.remove();
-  })
-}
+        const container = document.createElement("div");
+        container.classList.add("container");
+  
+        const table = document.createElement("table")
+        table.innerHTML = `
+        <tr>
+        <th>CheckBox</th>
+        <th>Name</th>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Address</th>
+      </tr>
+        ` 
+  
+        result.forEach(item => {
+          const tableRow = document.createElement("tr")
+          tableRow.classList.add("tableRow")
+          tableRow.innerHTML = `
+          <tr>
+          <td><input type="checkbox"></td>
+          <td>${item.name}</td>
+          <td>${item.username}</td>
+          <td>${item.email}</td>
+          <td>${item.address.street}</td>
+          <td><button onclick="deleteRaw()" class ="deleteButton">Delete</button></td>
+        </tr>
+          `
+  
+          table.appendChild(tableRow)
+          container.appendChild(table)
+          document.body.appendChild(container);
+        })
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+  
+  
+  getApi();
 
-
-
-
+  
+  
